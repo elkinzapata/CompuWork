@@ -30,11 +30,6 @@ public class Empleado {
         this.departamentoId = departamentoId;
     }
 
-    public void actualizarDatos(String nombre, String apellido) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-
     @Override
     public String toString() {
         return "Empleado{" +
