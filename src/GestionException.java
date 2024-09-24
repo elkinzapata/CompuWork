@@ -3,3 +3,4 @@ public class GestionException extends Exception {
         super(message);
     }
 }
+
