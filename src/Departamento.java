@@ -46,10 +46,15 @@ public class Departamento {
 
     @Override
     public String toString() {
-        return "Departamento{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", empleados=" + empleados +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Departamento ID: ").append(id)
+                .append("\nNombre: ").append(nombre)
+                .append("\nEmpleados:\n");
+
+        for (Empleado empleado : empleados) {
+            sb.append(empleado).append("\n");
+        }
+        return sb.toString();
     }
+
 }
