@@ -5,11 +5,13 @@ public class Departamento {
     private String id;
     private String nombre;
     private List<Empleado> empleados;
+    private int capacidadMaxima; // Nuevo atributo para capacidad
 
-    public Departamento(String id, String nombre) {
+    public Departamento(String id, String nombre, int capacidadMaxima) {
         this.id = id;
         this.nombre = nombre;
         this.empleados = new ArrayList<>();
+        this.capacidadMaxima = capacidadMaxima;
     }
 
     public String getId() {
@@ -24,12 +26,20 @@ public class Departamento {
         return empleados;
     }
 
-    public void agregarEmpleado(Empleado empleado) {
+    // Método para agregar un empleado con gestión de excepciones
+    public void agregarEmpleado(Empleado empleado) throws GestionException {
+        if (empleados.size() >= capacidadMaxima) {
+            throw new GestionException("El departamento ha alcanzado su capacidad máxima.");
+        }
         empleados.add(empleado);
         empleado.setDepartamentoId(this.id);
     }
 
-    public void eliminarEmpleado(Empleado empleado) {
+    // Método para eliminar un empleado con gestión de excepciones
+    public void eliminarEmpleado(Empleado empleado) throws GestionException {
+        if (!empleados.contains(empleado)) {
+            throw new GestionException("El empleado no existe en este departamento.");
+        }
         empleados.remove(empleado);
         empleado.setDepartamentoId(null);
     }
@@ -43,3 +53,4 @@ public class Departamento {
                 '}';
     }
 }
+

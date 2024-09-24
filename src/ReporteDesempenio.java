@@ -1,9 +1,9 @@
-public class ReporteDesempeño {
+public class ReporteDesempenio {
     private Empleado empleado;
     private String evaluacion;
     private String comentarios;
 
-    public ReporteDesempeño(Empleado empleado, String evaluacion, String comentarios) {
+    public ReporteDesempenio(Empleado empleado, String evaluacion, String comentarios) {
         this.empleado = empleado;
         this.evaluacion = evaluacion;
         this.comentarios = comentarios;
@@ -23,7 +23,7 @@ public class ReporteDesempeño {
 
     @Override
     public String toString() {
-        return "ReporteDesempeño{" +
+        return "ReporteDesempenio{" +
                 "empleado=" + empleado +
                 ", evaluacion='" + evaluacion + '\'' +
                 ", comentarios='" + comentarios + '\'' +
