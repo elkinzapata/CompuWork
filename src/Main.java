@@ -43,16 +43,27 @@ public class Main {
         // Crear la ventana
         JFrame frame = new JFrame("Gestión de Empleados y Departamentos");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(1000, 700);
 
-        // Crear el panel
+        // Crear el panel con FlowLayout para centrar los componentes
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(0, 1));
+        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));  // Centramos los componentes con un espaciado
 
         // Crear componentes para la ventana
         JLabel label = new JLabel("Seleccione una acción:");
+        label.setHorizontalAlignment(SwingConstants.CENTER);  // Centramos el texto
+        label.setFont(new Font("Arial", Font.BOLD, 20));  // Aplicamos fuente en negrita y tamaño 20
+
+        // Crear botón Agregar Empleado
         JButton botonAgregarEmpleado = new JButton("Agregar Empleado");
+        botonAgregarEmpleado.setFont(new Font("Arial", Font.BOLD, 20));  // Aplicamos fuente en negrita y tamaño 20
+        botonAgregarEmpleado.setPreferredSize(new Dimension(250, 50));  // Definir el tamaño del botón
+
+        // Crear botón Generar Reporte
         JButton botonGenerarReporte = new JButton("Generar Reporte");
+        botonGenerarReporte.setFont(new Font("Arial", Font.BOLD, 20));  // Aplicamos fuente en negrita y tamaño 20
+        botonGenerarReporte.setPreferredSize(new Dimension(250, 50));  // Definir el tamaño del botón
+
         JTextArea areaTexto = new JTextArea(10, 30);  // Área de texto para mostrar información
         JScrollPane scrollPane = new JScrollPane(areaTexto);
 
